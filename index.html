@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- <link rel="stylesheet" href="SurveyFormStyle.css"> -->
+
+    <style>
+        /* Reset some default styles */
+body, h2 {
+    margin: 0;
+    padding: 0;
+    font-style: bold;
+}
+
+/* Styles for the container */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    font-weight: bold;
+}
+
+/* Styles for form group */
+.form-group {
+    margin-bottom: 50px;
+    font-weight: bold;
+    /* width:50px; */
+}
+
+.form-text{
+    margin-bottom:20px;
+ 
+}
+
+
+
+/* Important asterisk */
+.important {
+    color: red;
+}
+
+/* Styles for name inputs */
+.name-inputs {
+    display: flex;
+}
+
+.name-inputs input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Styles for rating stars */
+.rating {
+    color: #ffcc00;
+    display: flex;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    background-image: 
+    url('https://pluspng.com/img-png/yellow-stars-png-hd-hd-quality-wallpaper-collection-pattern-2000x2000-star-2000.png'); /* Replace with your star image */
+    background-size: cover;
+}
+
+/* Styles for text area */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+/* Styles for satisfaction inputs */
+.satisfaction {
+    margin-top: 10px;
+}
+
+.satisfaction label {
+    margin-right: 10px;
+}
+
+.satisfaction input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Styles for submit button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: grey;
+    width:100px;
+    height:50px;
+}
+
+/* Styles for table */
+.satisfaction-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.satisfaction-table td {
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    text-align: center;
+    border: none;
+}
+
+/* Highlight grey rows */
+.highlight-grey td {
+    background-color: #f4f4f4;
+}
+
+
+h3{
+    position: relative;
+    top : -20px;
+}
+
+.suggestion-box{
+
+    width:700px;
+    height:200px;
+    border:1px solid black;
+    display :block;
+    position:relative;
+    left :-10px;
+    right:50px;
+    top:-10px;
+    border-radius:10px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label><span class="important">*</span> Name:</label>
+                <div class="name-inputs">
+                    <input type="text" id="first_name" name="first_name" placeholder="First" required>
+                    <input type="text" id="last_name" name="last_name" placeholder="Last" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><span class="important">*</span> Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label><span class="important">*</span> Your Experience:</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" required><label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+                </div>
+            </div>
+            <div class="form-text">
+                <label>Overall, how would you rate your experience with us?</label>
+                
+            </div>
+        </br>
+            
+            <div class="form-group">
+                <label><span class="important">*</span> How satisfied are you with:</label>
+            </br></br>
+                <table class="satisfaction-table">
+                   <tr>
+                    <td></td>
+                    <td>Very Unsatisfied</td>
+                    <td>Unsatisfied </td>
+                    <td>Neutral</td>
+                    <td>Satisfied</td>
+                    <td>Very Satisfied</td>
+                   </tr>
+                    <tr class="highlight-grey">
+                        <td>Purchase</td>
+                        <td><input type="radio" name="purchase_satisfaction" value="1"></td>
+                        <td><input type="radio" name="purchase_satisfaction" value="2"></td>
+                        <td><input type="radio" name="purchase_satisfaction" value="3"></td>
+                        <td><input type="radio" name="purchase_satisfaction" value="4"></td>
+                        <td><input type="radio" name="purchase_satisfaction" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Service</td>
+                        <td><input type="radio" name="service_satisfaction" value="1"></td>
+                        <td><input type="radio" name="service_satisfaction" value="2"></td>
+                        <td><input type="radio" name="service_satisfaction" value="3"></td>
+                        <td><input type="radio" name="service_satisfaction" value="4"></td>
+                        <td><input type="radio" name="service_satisfaction" value="5"></td>
+                    </tr>
+                    <tr class="highlight-grey">
+                        <td>Company Overall</td>
+                        <td><input type="radio" name="overall_satisfaction" value="1"></td>
+                        <td><input type="radio" name="overall_satisfaction" value="2"></td>
+                        <td><input type="radio" name="overall_satisfaction" value="3"></td>
+                        <td><input type="radio" name="overall_satisfaction" value="4"></td>
+                        <td><input type="radio" name="overall_satisfaction" value="5"></td>
+                    </tr>
+                </table>
+            </br></br>
+                <div class="form-group">
+                    <label><span class="important">*</span> How likely are you to?</label>
+
+                <table class="satisfaction-table">
+                    <tr>
+                     <td></td>
+                     <td>Very Unlikely</td>
+                     <td>Unlikely </td>
+                     <td>Neutral</td>
+                     <td>Likely</td>
+                     <td>Very Likely</td>
+                    </tr>
+                     <tr class="highlight-grey">
+                         <td>Buy from us again</td>
+                         <td><input type="radio" name="purchase_satisfaction" value="1"></td>
+                         <td><input type="radio" name="purchase_satisfaction" value="2"></td>
+                         <td><input type="radio" name="purchase_satisfaction" value="3"></td>
+                         <td><input type="radio" name="purchase_satisfaction" value="4"></td>
+                         <td><input type="radio" name="purchase_satisfaction" value="5"></td>
+                     </tr>
+                     <tr>
+                         <td>Recommend our products to others</td>
+                         <td><input type="radio" name="service_satisfaction" value="1"></td>
+                         <td><input type="radio" name="service_satisfaction" value="2"></td>
+                         <td><input type="radio" name="service_satisfaction" value="3"></td>
+                         <td><input type="radio" name="service_satisfaction" value="4"></td>
+                         <td><input type="radio" name="service_satisfaction" value="5"></td>
+                     </tr>
+                     <tr class="highlight-grey">
+                         <td>Recommend our company to others</td>
+                         <td><input type="radio" name="overall_satisfaction" value="1"></td>
+                         <td><input type="radio" name="overall_satisfaction" value="2"></td>
+                         <td><input type="radio" name="overall_satisfaction" value="3"></td>
+                         <td><input type="radio" name="overall_satisfaction" value="4"></td>
+                         <td><input type="radio" name="overall_satisfaction" value="5"></td>
+                     </tr>
+                 </table>
+            </div>
+        </br>
+        
+            <h3>Additional Comments or Suggestions</h3>
+            <div class="suggestion-box"></div>
+
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
